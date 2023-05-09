@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import bg from "../images/parallax/Howl.jpg";
+import bg from "../images/parallax/Howl.png";
 import castel from "../images/parallax/castel.png";
 import ground from "../images/parallax/ground.png";
 import pers from "../images/parallax/pers.png";
