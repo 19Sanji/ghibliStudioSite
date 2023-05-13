@@ -1,14 +1,31 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
-import homeIcon from '../images/home.png'
-import mediaIcon from '../images/media.png'
-import youtubeIcon from '../images/youtube.png'
-import infoIcon from '../images/info.png'
+import homeIcon from "../images/home.png";
+import mediaIcon from "../images/media.png";
+import youtubeIcon from "../images/youtube.png";
+import infoIcon from "../images/info.png";
 
 export default function Menu() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [hide, setHide] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      return window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  useEffect(() => {
+    setHide(scrollPosition > window.innerHeight ? true : false);
+  }, [scrollPosition]);
+
+  const handleScroll = (e) => {
+    setScrollPosition(window.scrollY);
+  };
+
   return (
     <div className="menu">
-      <div className="imgs">
+      <div className={!hide ? "imgs" : "imgs hide"}>
         <img src={homeIcon} />
         <img src={mediaIcon} />
         <img src={youtubeIcon} />

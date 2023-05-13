@@ -1,0 +1,32 @@
+.aboutSudio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  background-color: aqua;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  margin: 0px 50px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  background-color: #007fff;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.logo img {
+  height: 70%;
+}

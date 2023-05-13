@@ -25,50 +25,53 @@ export default function HowlParallax() {
 
   return (
     <div
-      className="parallax"
+      className="parallax_wrapper"
       onMouseMove={parallaxHendler}
       onMouseLeave={mouseLeaveHandler}
     >
-      <img
-        className="parallax_bg"
-        src={bg}
-        style={{
-          transform: `translate(${-mousePositionX * 2}px,${
-            -mousePositionY * 1.5
-          }px)`,
-        }}
-      />
+      <div className="parallax">
+        <img
+          className="parallax_bg"
+          src={bg}
+          style={{
+            transform: `translate(${-mousePositionX * 2}px,${
+              -mousePositionY * 1.5
+            }px)`,
+          }}
+        />
 
-      <img
-        className="parallax_ground"
-        src={ground}
-        style={{
-          transform: `translate(${-mousePositionX * forGround}px,${
-            -mousePositionY * forGround
-          }px)`,
-        }}
-      />
-      <img
-        className="parallax_castel"
-        src={castel}
-        style={{
-          transform: `translate(${-mousePositionX * forCastel}px,${
-            -mousePositionY * forCastel
-          }px)`,
-        }}
-      />
-      <img
-        className="parallax_pers"
-        src={pers}
-        style={{
-          transform: `translate(${-mousePositionX * forPers}px,${
-            -mousePositionY * forPers
-          }px)`,
-        }}
-      />
-      <div className="title">
-        <h1>GHIBLI STUDIO</h1>
+        <img
+          className="parallax_ground"
+          src={ground}
+          style={{
+            transform: `translate(${-mousePositionX * forGround}px,${
+              -mousePositionY * forGround
+            }px)`,
+          }}
+        />
+        <img
+          className="parallax_castel"
+          src={castel}
+          style={{
+            transform: `translate(${-mousePositionX * forCastel}px,${
+              -mousePositionY * forCastel
+            }px)`,
+          }}
+        />
+        <img
+          className="parallax_pers"
+          src={pers}
+          style={{
+            transform: `translate(${-mousePositionX * forPers}px,${
+              -mousePositionY * forPers
+            }px)`,
+          }}
+        />
+        <div className="title">
+          <h1>GHIBLI STUDIO</h1>
+        </div>
       </div>
+      <div className="zagl"></div>
     </div>
   );
 }
