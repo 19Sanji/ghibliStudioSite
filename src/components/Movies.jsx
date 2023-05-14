@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MoviesCard from "./MoviesCard";
 import "../movies.css";
 
-export default function Movies() {
+export default function Movies({ setIsInMovies }) {
   const [movies, setMovies] = useState([]);
   const [moviesIsReady, setMoviesIsReady] = useState(false);
+  const [isGrabed, setIsGrabed] = useState(false);
+  const [prevPageXPosition, setPrevPageXPosition] = useState(0);
+  const [prefScrollLeft, setPrefScrollLeft] = useState(0);
+
+  const sliderRef = useRef();
 
   const toArr = (obj) => {
     const arr = [];
@@ -30,9 +35,42 @@ export default function Movies() {
     console.log(movies);
   }, [movies]);
 
+  const mouseMoveHandler = (e) => {
+    e.preventDefault();
+    if (isGrabed) {
+      let positionDiff = e.pageX - prevPageXPosition;
+
+      sliderRef.current.scrollLeft = prefScrollLeft - positionDiff;
+      console.log(sliderRef.current.scrollLeft);
+    }
+  };
+
+  const mouseDownHandler = (e) => {
+    setIsGrabed(true);
+    setPrevPageXPosition(e.pageX);
+    setPrefScrollLeft(sliderRef.current.scrollLeft);
+  };
+
+  const mouseUpHandler = (e) => {
+    setIsGrabed(false);
+  };
+
   return (
     // добавить лоадер
-    <div className="movies">
+    <div
+      className="movies"
+      ref={sliderRef}
+      onMouseEnter={() => {
+        setIsInMovies(true);
+      }}
+      onMouseMove={mouseMoveHandler}
+      onMouseDown={mouseDownHandler}
+      onMouseUp={mouseUpHandler}
+      onMouseLeave={() => {
+        setIsGrabed(false);
+        setIsInMovies(false);
+      }}
+    >
       {moviesIsReady && movies.map((m) => <MoviesCard movie={m} />)}
     </div>
   );

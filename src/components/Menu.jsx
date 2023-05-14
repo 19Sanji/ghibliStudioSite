@@ -5,7 +5,7 @@ import mediaIcon from "../images/media.png";
 import youtubeIcon from "../images/youtube.png";
 import infoIcon from "../images/info.png";
 
-export default function Menu() {
+export default function Menu({isInMovies}) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [hide, setHide] = useState(false);
 
@@ -25,7 +25,7 @@ export default function Menu() {
 
   return (
     <div className="menu">
-      <div className={!hide ? "imgs" : "imgs hide"}>
+      <div className={!hide && !isInMovies ? "imgs" : "imgs hide"}>
         <img src={homeIcon} />
         <img src={mediaIcon} />
         <img src={youtubeIcon} />
