@@ -1,10 +1,19 @@
 import React from "react";
 import "../movies.css";
 
-export default function MoviesCard({ movie }) {
+export default function MoviesCard({
+  movie,
+  setModalState,
+  setIsModalOpen,
+  isModalOpen,
+}) {
   const onDoubleClick = () => {
-    console.log(movie);
-    alert(movie.title);
+    setModalState(movie);
+    setIsModalOpen(true);
+    //  setIsModalOpen(!isModalOpen);
+
+    // console.log(movie);
+    // alert(movie.title);
   };
   return (
     <div className="moviesCard" onDoubleClick={onDoubleClick}>

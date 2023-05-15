@@ -2,7 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import MoviesCard from "./MoviesCard";
 import "../movies.css";
 
-export default function Movies({ setIsInMovies }) {
+export default function Movies({
+  setIsInMovies,
+  setModalState,
+  setIsModalOpen,
+  isModalOpen
+}) {
   const [movies, setMovies] = useState([]);
   const [moviesIsReady, setMoviesIsReady] = useState(false);
   const [isGrabed, setIsGrabed] = useState(false);
@@ -71,7 +76,15 @@ export default function Movies({ setIsInMovies }) {
         setIsInMovies(false);
       }}
     >
-      {moviesIsReady && movies.map((m) => <MoviesCard movie={m} />)}
+      {moviesIsReady &&
+        movies.map((m) => (
+          <MoviesCard
+            movie={m}
+            setModalState={setModalState}
+            setIsModalOpen={setIsModalOpen}
+            isModalOpen={isModalOpen}
+          />
+        ))}
     </div>
   );
 }
