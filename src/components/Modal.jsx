@@ -29,7 +29,7 @@ export default function Modal({ modalState, setIsModalOpen}) {
             Детали
           </div>
         </div>
-        <div className="close" onDoubleClick={closeModal}>
+        <div className="close" onClick={closeModal}>
           <img src={closeIcon}/>
         </div>
       </div>

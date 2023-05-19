@@ -88,6 +88,16 @@ body {
   transition-delay: 0s;
 }
 
+.player {
+  width: 100%;
+  height: 500px;
+}
+
+.player iframe {
+  width: 100%;  
+  height: 100%;
+}
+
 .footer {
   width: 100%;
   height: 500px;
