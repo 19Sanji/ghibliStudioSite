@@ -7,7 +7,6 @@ import AboutHM from "./components/AboutHM";
 import Movies from "./components/Movies";
 import Footer from "./components/Footer";
 import Modal from "./components/Modal";
-import Player from "./components/Player";
 
 function App() {
   const [isInMovies, setIsInMovies] = useState(false);
@@ -31,7 +30,6 @@ function App() {
       {isModalOpen && (
         <Modal modalState={modalState} setIsModalOpen={setIsModalOpen} />
       )}
-      <Player url={"https://www.youtube.com/watch?v=jfKfPfyJRdk"} />
       <Footer />
     </div>
   );
