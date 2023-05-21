@@ -30,6 +30,7 @@ export default function ModalPage({
     xhr.onerror = function () {
       console.log("Запрос не удался");
     };
+    console.log(modalState);
   }, [modalState]);
 
   useEffect(() => {
@@ -48,12 +49,19 @@ export default function ModalPage({
   return (
     <div className="modalPageContent">
       {tabState === "ABOUT" ? (
-        <>
+        <div className="tabContent">
+          <div className="modalPageText">
+            <div className="">{modalState.title}</div>
+            <div className="">Режиссер</div>
+            <div className=""> Жанр</div>
+            <div className=""> Рейтинг</div>
+            <div className="">Продолжительность</div>
+          </div>
           <Player url={`https://www.youtube.com/embed/${videoId}`} />
-          <div className="modalPageText">{modalState.title}</div>
-        </>
+        </div>
       ) : (
-        <div className="">
+        <div className="tabContent">
+          Награды Музыкальный режиссер Дата выхода Персонажи
           {modalState.awards.map((e) => (
             <div>{e}</div>
           ))}
