@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Player from "../components/Player";
 
-export default function ModalPage({ tabState, modalState }) {
-  const [videoId, setVideoId] = useState("");
+export default function ModalPage({
+  tabState,
+  modalState,
+  moviesRef,
+  modalPageRef,
+}) {
+  const [videoId, setVideoId] = useState("HTlKoYCD96I");
 
   const API_KEY = "AIzaSyDG8aRWtO6fjGiXPYbzdQtmsZz1CwmXB1Y";
   const searchWord = `${modalState.title}-trailer`;
@@ -15,32 +20,37 @@ export default function ModalPage({ tabState, modalState }) {
     xhr.send();
 
     xhr.onload = function () {
-      if (xhr.status != 200) {
-        alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+      if (xhr.status !== 200) {
+        console.log(`Ошибка ${xhr.status}: ${xhr.statusText}`);
       } else {
         setVideoId(xhr.response.items[0].id.videoId);
       }
     };
 
-    // xhr.onprogress = function (event) {
-    //   if (event.lengthComputable) {
-    //     alert(`Получено ${event.loaded} из ${event.total} байт`);
-    //   } else {
-    //     alert(`Получено ${event.loaded} байт`);
-    //   }
-    // };
-
     xhr.onerror = function () {
-      alert("Запрос не удался");
+      console.log("Запрос не удался");
     };
   }, [modalState]);
+
+  useEffect(() => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: modalPageRef.current.offsetTop,
+    });
+    return () => {
+      window.scrollTo({
+        behavior: "smooth",
+        top: moviesRef.current.offsetTop,
+      });
+    };
+  }, []);
 
   return (
     <div className="modalPageContent">
       {tabState === "ABOUT" ? (
         <>
-          <div className="">{modalState.title}</div>
           <Player url={`https://www.youtube.com/embed/${videoId}`} />
+          <div className="modalPageText">{modalState.title}</div>
         </>
       ) : (
         <div className="">

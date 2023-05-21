@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import ModalPage from "./ModalPage";
 import "../modal.css";
-import closeIcon from "../images/close.png"
+import closeIcon from "../images/close.png";
 
-export default function Modal({ modalState, setIsModalOpen}) {
+export default function Modal({ modalState, setIsModalOpen, moviesRef }) {
   const [tabState, setTabState] = useState("ABOUT");
 
+  const modalPageRef = useRef(null);
+  
   const aboutHandler = () => {
     setTabState("ABOUT");
   };
@@ -19,7 +21,7 @@ export default function Modal({ modalState, setIsModalOpen}) {
   };
 
   return (
-    <div className="modal">
+    <div className="modal" ref={modalPageRef} F>
       <div className="modalToolbar">
         <div className="tabs">
           <div className="tab" onClick={aboutHandler}>
@@ -30,11 +32,16 @@ export default function Modal({ modalState, setIsModalOpen}) {
           </div>
         </div>
         <div className="close" onClick={closeModal}>
-          <img src={closeIcon}/>
+          <img src={closeIcon} />
         </div>
       </div>
 
-      <ModalPage tabState={tabState} modalState={modalState}/>
+      <ModalPage
+        tabState={tabState}
+        modalState={modalState}
+        moviesRef={moviesRef}
+        modalPageRef={modalPageRef}
+      />
     </div>
   );
 }

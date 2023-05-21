@@ -12,9 +12,11 @@ function App() {
   const [isInMovies, setIsInMovies] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalState, setModalState] = useState();
+
+  const moviesRef = useRef(null);
   return (
     <div>
-      <Menu isInMovies={isInMovies} />
+      <Menu isInMovies={isInMovies} moviesRef={moviesRef} />
       <HowlParallax />
       {"Тут должен быть переход.Например, под землю"}
       <AboutStudio />
@@ -26,9 +28,14 @@ function App() {
         setModalState={setModalState}
         setIsModalOpen={setIsModalOpen}
         isModalOpen={isModalOpen}
+        moviesRef={moviesRef}
       />
       {isModalOpen && (
-        <Modal modalState={modalState} setIsModalOpen={setIsModalOpen} />
+        <Modal
+          modalState={modalState}
+          setIsModalOpen={setIsModalOpen}
+          moviesRef={moviesRef}
+        />
       )}
       <Footer />
     </div>

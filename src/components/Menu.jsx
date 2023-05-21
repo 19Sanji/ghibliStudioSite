@@ -5,7 +5,7 @@ import mediaIcon from "../images/media.png";
 import youtubeIcon from "../images/youtube.png";
 import infoIcon from "../images/info.png";
 
-export default function Menu({isInMovies}) {
+export default function Menu({ isInMovies, moviesRef }) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [hide, setHide] = useState(false);
 
@@ -32,7 +32,16 @@ export default function Menu({isInMovies}) {
         <img src={infoIcon} />
       </div>
       <div className="links">
-        <a href="">IconHome</a>
+        <a
+          onClick={() =>
+            window.scrollTo({
+              behavior: "smooth",
+              top: moviesRef.current.offsetTop,
+            })
+          }
+        >
+          IconHome
+        </a>
         <a href="">IconYoutube</a>
         <a href="">IconPhone</a>
         <a href="">IconQuestion</a>

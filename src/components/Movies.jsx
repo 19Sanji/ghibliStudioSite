@@ -6,7 +6,8 @@ export default function Movies({
   setIsInMovies,
   setModalState,
   setIsModalOpen,
-  isModalOpen
+  isModalOpen,
+  moviesRef,
 }) {
   const [movies, setMovies] = useState([]);
   const [moviesIsReady, setMoviesIsReady] = useState(false);
@@ -44,9 +45,7 @@ export default function Movies({
     e.preventDefault();
     if (isGrabed) {
       let positionDiff = e.pageX - prevPageXPosition;
-
       sliderRef.current.scrollLeft = prefScrollLeft - positionDiff;
-      console.log(sliderRef.current.scrollLeft);
     }
   };
 
@@ -62,29 +61,31 @@ export default function Movies({
 
   return (
     // добавить лоадер
-    <div
-      className="movies"
-      ref={sliderRef}
-      onMouseEnter={() => {
-        setIsInMovies(true);
-      }}
-      onMouseMove={mouseMoveHandler}
-      onMouseDown={mouseDownHandler}
-      onMouseUp={mouseUpHandler}
-      onMouseLeave={() => {
-        setIsGrabed(false);
-        setIsInMovies(false);
-      }}
-    >
-      {moviesIsReady &&
-        movies.map((m) => (
-          <MoviesCard
-            movie={m}
-            setModalState={setModalState}
-            setIsModalOpen={setIsModalOpen}
-            isModalOpen={isModalOpen}
-          />
-        ))}
+    <div className="" ref={moviesRef}>
+      <div
+        className="movies"
+        ref={sliderRef}
+        onMouseEnter={() => {
+          setIsInMovies(true);
+        }}
+        onMouseMove={mouseMoveHandler}
+        onMouseDown={mouseDownHandler}
+        onMouseUp={mouseUpHandler}
+        onMouseLeave={() => {
+          setIsGrabed(false);
+          setIsInMovies(false);
+        }}
+      >
+        {moviesIsReady &&
+          movies.map((m) => (
+            <MoviesCard
+              movie={m}
+              setModalState={setModalState}
+              setIsModalOpen={setIsModalOpen}
+              isModalOpen={isModalOpen}
+            />
+          ))}
+      </div>
     </div>
   );
 }
