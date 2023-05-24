@@ -5,8 +5,8 @@ export default function Player({ url }) {
   return (
     <div className="player">
       <iframe
-        width="560"
-        height="315"
+        // width="560"
+        // height="315"
         src={ url }
         title="YouTube video player"
         frameBorder="0"

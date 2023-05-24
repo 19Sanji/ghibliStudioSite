@@ -1,7 +1,15 @@
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Comfortaa;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: local("Comfortaa"),
+    url(./font/Comfortaa/Comfortaa-VariableFont_wght.ttf) format("truetype");
 }
 
 .menu {
@@ -25,7 +33,8 @@ body {
   flex-direction: column;
   height: 100%;
   min-width: 100px;
-  background-color: rgb(51, 51, 51);
+  /* background-color: rgb(51, 51, 51); */
+  background-color: #141414;
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
@@ -70,7 +79,7 @@ body {
 .links a {
   color: #fff;
   text-decoration: none;
-  margin: 20px 0px 0px 30px;
+  margin: 30px 0px 9px 30px;
   cursor: pointer;
 }
 .hide {
@@ -81,8 +90,9 @@ body {
   transition-delay: 0;
 }
 
-.hide.imgs img {
-  display: none;
+.imgs img.hide {
+  /* display: none; */
+  width: 0px;
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
@@ -91,7 +101,33 @@ body {
 
 .footer {
   width: 100%;
-  height: 1000px;
-  /* background-color: #f2f2f2; */
-  background-color: #141414;
+  height: 100%;
+}
+.footer img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.trueModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(119, 119, 119, 0.5);
+  z-index: 999;
+}
+
+.trueModalConent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
 }

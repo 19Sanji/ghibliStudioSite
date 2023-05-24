@@ -82,7 +82,6 @@ export default function Movies({
               movie={m}
               setModalState={setModalState}
               setIsModalOpen={setIsModalOpen}
-              isModalOpen={isModalOpen}
             />
           ))}
       </div>

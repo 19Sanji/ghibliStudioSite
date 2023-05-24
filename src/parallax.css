@@ -5,31 +5,31 @@
 
 .parallax {
   position: relative;
-  max-width: 100vw;
+  width: 100vw;
   top: -50px;
   z-index: -1;
 }
 .parallax_bg {
   position: absolute;
-  max-width: 100vw;
+  width: 100vw;
   top: -50px;
   z-index: -1;
 }
 .parallax_castel {
   position: absolute;
-  max-width: 100vw;
+  width: 100vw;
   top: -50px;
   z-index: -1;
 }
 .parallax_ground {
   position: absolute;
-  max-width: 100vw;
+  width: 100vw;
   top: -50px;
   z-index: -1;
 }
 .parallax_pers {
   position: absolute;
-  max-width: 100vw;
+  width: 100vw;
   top: -50px;
   z-index: -1;
 }

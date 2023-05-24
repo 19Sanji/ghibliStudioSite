@@ -1,15 +1,25 @@
 .modal {
   width: 100%;
-  height: 100vh;
-  position: relative;
+  /* height: 100vh; */
+  min-height: 100vh;
   background-color: #141414;
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
   color: #777;
-  
 }
+
+.modalPageContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+}
+
 .modalToolbar {
   display: flex;
   justify-content: center;
@@ -17,6 +27,7 @@
   flex-direction: row;
   width: 100%;
 }
+
 .tabs {
   display: flex;
   justify-content: center;
@@ -32,8 +43,105 @@
   height: 40px;
   margin: 10px 5px 10px 5px;
   border-radius: 10px;
-  background-color: #141414;
+  background-color: rgb(119, 119, 119, 0.1);
   cursor: pointer;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
+}
+
+.tab:hover {
+  background-color: rgb(46, 46, 46);
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.tabContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.tabContentColumn_first {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 65%;
+  height: 100%;
+  line-height: 30px;
+}
+
+.tabContentColumn_Row_first {
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 50px;
+}
+
+.tabContentColumn_Row_second {
+  text-align: center;
+  line-height: 20px;
+  height: 100%;
+}
+
+.tabContentColumn_second {
+  width: 35%;
+  height: 100%;
+  line-height: 20px;
+}
+
+.tabContentColumn_title {
+  font-size: x-large;
+  text-align: center;
+  margin: 10px 0px;
+  text-shadow: #fff 0px 0px 4px;
+}
+.tabContentColumn_synopsis {
+  line-height: 30px;
+  font-size: medium;
+  text-align: center;
+}
+
+.tabContentColumn_character {
+  font-size: medium;
+}
+
+.tabContentColumn_director {
+  margin-top: 5px;
+  font-size: medium;
+}
+
+.tabContentColumn_music {
+  margin-top: 5px;
+  font-size: medium;
+  line-height: 17px;
+}
+
+.tabContentColumn_awards {
+  margin-top: 10px;
+  font-size: medium;
+}
+
+.tabContentColumn_hepburn {
+  margin-top: 5px;
+  font-size: medium;
+}
+
+.tabContentColumn_row {
+  margin-top: 5px;
+}
+
+.colorWhite {
+  color: #fff;
 }
 
 .close {
@@ -51,22 +159,19 @@
   height: 20px;
 }
 
-.modalPageContent {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  background-color: #141414;
-}
-
-
 .player {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 60%;
+  margin: 0px 20px;
+}
+
+.moviesTexts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalPageText {
@@ -76,19 +181,58 @@
   flex-direction: column;
   height: 100%;
   color: #777;
+  margin: 10px;
 }
 
 .player iframe {
-  min-width: 1020px;
-  min-height: 630px;
+  /* min-width: 560px;
+  min-height: 315px; */
+  /* умноженное на 1.3 */
+  min-width: 728px;
+  min-height: 410px;
 }
 
+.moviesTitle {
+  color: #fff;
+  font-size: xxx-large;
+  text-align: center;
+  text-shadow: #fff 0px 0px 4px;
+  margin-bottom: 30px;
+}
 
-.tabContent {
+.moviesText {
+  margin: 0px 5px;
+  font-size: medium;
+}
+
+.trailerBtn {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
+  background-color: #f50;
+  color: #fff;
+  font-size: large;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  height: 45px;
+  width: 170px;
+  margin-top: 10px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
+}
+
+.trailerBtn:hover {
+  transform: scale(1.05);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
+}
+
+.trailerBtn img {
+  height: 25px;
+  margin-right: 10px;
 }

@@ -1,0 +1,29 @@
+.aboutJH {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.JH_img img {
+  height: 400px;
+  margin: 50px;
+}
+
+.JH_text {
+  margin: 50px;
+  line-height: 30px;
+  opacity: 1;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
+}
+
+.JH_text.animated {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
+}
