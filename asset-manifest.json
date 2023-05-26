@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ghibliStudioSite/static/css/main.59ef377b.css",
+    "main.js": "/ghibliStudioSite/static/js/main.66701814.js",
+    "static/media/footer.jpg": "/ghibliStudioSite/static/media/footer.6e76f70b8a41ad4638b3.jpg",
+    "static/media/Howl.png": "/ghibliStudioSite/static/media/Howl.a6fba27fd220b77903dd.png",
+    "static/media/castel.png": "/ghibliStudioSite/static/media/castel.b4d7411ea3b18559e6a8.png",
+    "static/media/ground.png": "/ghibliStudioSite/static/media/ground.049b79bac149676aa1f7.png",
+    "static/media/Comfortaa-VariableFont_wght.ttf": "/ghibliStudioSite/static/media/Comfortaa-VariableFont_wght.b068f2b67728ed2825a8.ttf",
+    "static/media/JH.jpg": "/ghibliStudioSite/static/media/JH.fe16f96ac4f56e5dca12.jpg",
+    "static/media/HM.jpg": "/ghibliStudioSite/static/media/HM.1f2c6903f24028a270fe.jpg",
+    "static/media/pers.png": "/ghibliStudioSite/static/media/pers.ff7ac02e1d5b2003b946.png",
+    "static/media/studio-ghibli-logo.svg": "/ghibliStudioSite/static/media/studio-ghibli-logo.35cf807fb3f61304ff1f8383b446871e.svg",
+    "static/media/close.png": "/ghibliStudioSite/static/media/close.be846d746a4470db1128.png",
+    "index.html": "/ghibliStudioSite/index.html",
+    "main.59ef377b.css.map": "/ghibliStudioSite/static/css/main.59ef377b.css.map",
+    "main.66701814.js.map": "/ghibliStudioSite/static/js/main.66701814.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59ef377b.css",
+    "static/js/main.66701814.js"
+  ]
+}
